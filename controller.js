@@ -9,11 +9,20 @@ var app = express();
 app.use(express.static(__dirname + "/style"));
 app.use(express.static(__dirname + "/images"));
 app.use(express.static(__dirname + '/public')); 
+app.use(express.static(__dirname + '/videos')); 
 
 
 
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
+
+
+
+
+
+
+
+
 
 app.set('port', process.env.PORT || 3000);
 
