@@ -15,11 +15,13 @@ var con = mysql.createConnection({
 
 
 var modules = require('./lib/modules.js');
+var login = require('./framework/login.js');
+var register = require('./framework/register.js');
 
 var app = express();
 
-app.use(express.static(__dirname + "/style"));
-app.use(express.static(__dirname + "/images"));
+app.use(express.static(__dirname + '/style'));
+app.use(express.static(__dirname + '/images'));
 app.use(express.static(__dirname + '/public')); 
 app.use(express.static(__dirname + '/videos')); 
 
@@ -49,12 +51,23 @@ app.get('/contact', function(req, res) {
 });
 app.get('/meetings', function(req, res) {
  res.render('meeting');
-
 });
+
 app.get('/rules', function(req, res) {
  res.render('rules');
 
 });
+app.get('/login', function(req, res) {
+ res.render('login');
+
+});
+app.get('/register', function(req, res) {
+ res.render('register');
+
+});
+
+
+
 
 
 app.use(function(req, res, next){
